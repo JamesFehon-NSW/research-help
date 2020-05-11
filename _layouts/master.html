@@ -1,133 +1,198 @@
-<!DOCTYPE html>
-<!--[if lt IE 8]>
-	<html class="no-js lt-ie8 lt-ie9" lang="en">
-<![endif]-->
-<!--[if IE 8]>
-	<html class="no-js lt-ie9 ie8" lang="en">
-<![endif]-->
-<!--[if IE 9 ]>
-	<html class="no-js ie9" lang="en">
-<![endif]-->
-<!--[if !(IE)]><!-->
-	<html class="no-js" lang="en">
-<!--<![endif]-->
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-    <!-- Hotjar Tracking Code for https://digitalnsw.github.io/research-library/ -->
-       <script>
-         (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:1381369,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>{% if site.browserTitle %}{{site.browserTitle}}{% else %}{% if page.breadcrumb %}{{ page.breadcrumb }} |{% endif %}{{site.title}} | NSW Government{% endif %}</title>
-	<script type="text/javascript">
-		var $html = document.documentElement; if ($html.classList) $html.classList.remove("no-js"), $html.classList.add("js"); else { var className = "no-js"; $html.className = $html.className.replace(new RegExp("(^|\\b)" + className.split(" ").join("|") + "(\\b|$)", "gi"), " "), $html.className += " js" }
-	</script>
-	<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-	<link rel="icon" href="{{site.baseurl}}/assets/favicons/favicon.ico">
-	<link type="text/css" rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
-	<link type="text/css" rel="stylesheet" href="{{site.baseurl}}/local/css/additional.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
-	<script type="text/javascript" src="https://uat.onegov.nsw.gov.au/quickfeed/js/quickfeed.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if site.browserTitle %}{{site.browserTitle}}{% else %}{% if page.breadcrumb %}{{ page.breadcrumb }} |{% endif %}{{site.title}} | NSW Government{% endif %}</title>
+  <meta name="robots" content="noindex" />
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="/assets/favicon/favicon.ico">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+  <script>
+    // SVG Sprite Loader
+    var svgAjax = new XMLHttpRequest();
+    svgAjax.open("GET", "../../assets/svg/sprite.svg", true);
+    svgAjax.send();
+    svgAjax.onload = function(e) {
+      var fragment = document.createRange().createContextualFragment(svgAjax.responseText);
+      var svg = fragment.querySelector('svg')
+      svg.setAttribute('aria-hidden', true);
+      svg.style.cssText = 'position: absolute; width: 0; height: 0; overflow: hidden;'
+      document.body.insertBefore(fragment, document.body.childNodes[0]);
+    };
+    // Replace 'no-js' with 'js' on the html tag
+    (function(e){e.className=e.className.replace(/\bno-js\b/,'js')})(document.documentElement);
+  </script>
 </head>
-<!-- BODY -->
-<!-- GRID-12 -->
-<body class="au-grid">
-	<!-- SKIP-LINKS -->
-	<nav class="au-skip-link">
-		<a class="au-skip-link__link" href="#content">Skip to main content</a>
-		<a class="au-skip-link__link" href="#mainmenu">Skip to main navigation</a>
-	</nav>
-	<!-- HEADER -->
-	<header class="au-header au-header--dark" role="banner">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					<a class="au-header__brand" href="{{site.baseurl}}/">
-						<img class="au-header__brand-image" alt="NSW Government" src="{{site.baseurl}}/assets/img/nsw_white.png" width="90">
-						<div class="au-header__text">
-						<h2 class="au-header__heading">{{ site.title }}{% if site.stage %}<span class="header__badge">{{site.stage}}</span>{% endif %}</h2>
-						<div class="au-header__subline">{{ site.description }}</div>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</header>
+
+<body class="nsw-ds-example">
+  <nav class="nsw-skipto nsw-container" aria-label="Skip to links">
+  <a class="nsw-skipto__link" href="#nav"><span>Skip to navigation</span></a>
+  <a class="nsw-skipto__link" href="#content"><span>Skip to content</span></a>
+</nav>
+<div class="nsw-masthead">
+  <div class="nsw-container">
+    <p>A NSW Government website</p>
+  </div>
+</div>
+<header class="nsw-header">
+  <div class="nsw-header__container">
+    <div class="nsw-header__wrapper">
+      <div class="nsw-header__center">
+        <a href="#" class="nsw-header__logo-link">
+          <svg class="nsw-icon nsw-header__logo" focusable="false" aria-hidden="true">
+            <use xlink:href="#dpc-logo"></use>
+          </svg>
+          <span class="sr-only">{{ site.title }}</span>
+        </a>
+      </div>
+      <div class="nsw-header__left">
+        <button type="button" class="nsw-header-btn nsw-header-btn--menu js-open-navigation" aria-expanded="false"
+          aria-controls="main-navigation">
+          <svg class="nsw-icon nsw-header-btn__icon" focusable="false" aria-hidden="true">
+            <use xlink:href="#menu"></use>
+          </svg>
+          <span class="nsw-header-btn__sub"><span class="sr-only">Open</span> Menu</span>
+        </button>
+      </div>
+      <div class="nsw-header__right">
+        <button type="button" class="nsw-header-btn nsw-header-btn--search js-open-search" aria-expanded="false"
+          aria-controls="header-search">
+          <svg class="nsw-icon nsw-header-btn__icon" focusable="false" aria-hidden="true">
+            <use xlink:href="#search"></use>
+          </svg>
+          <span class="nsw-header-btn__sub"><span class="sr-only">Show</span> Search</span>
+        </button>
+      </div>
+    </div>
+    <div class="nsw-search">
+      <div id="header-search" class="nsw-search__area js-search-area" hidden>
+        <form role="search">
+          <label for="nsw-search__input" class="sr-only">Search site for:</label>
+          <input autocomplete="off" class="nsw-search__input js-search-input" id="nsw-search__input"
+            name="input-autocomplete" type="text">
+          <svg class="nsw-icon nsw-search__search-icon" focusable="false" aria-hidden="true">
+            <use xlink:href="#search"></use>
+          </svg>
+        </form>
+        <button class="nsw-search__close-btn js-close-search" aria-expanded="true" aria-controls="header-search">
+          <svg class="nsw-icon nsw-search__close-icon" focusable="false" aria-hidden="true">
+            <use xlink:href="#close"></use>
+          </svg>
+          <span class="sr-only">Close search</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
 
 {% if site.data.navs.mainnav[0] %}
 	<!-- MAIN NAVIGATION -->
-	<nav class="au-main-nav au-main-nav--dark" id="mainmenu" aria-label="main navigation">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="au-main-nav__content" id="main-nav-default-dark">
-						<button
-							aria-controls="main-nav-default-dark"
-							class="au-main-nav__toggle au-main-nav__toggle--open"
-							onClick="return AU.mainNav.Toggle( this )">
-							Menu
-						</button>
-
-						<div class="au-main-nav__menu">
-							<div class="au-main-nav__menu-inner">
-								<div class="au-main-nav__focus-trap-top"></div>
-								<button
-									aria-controls="main-nav-default-dark"
-									class="au-main-nav__toggle au-main-nav__toggle--close"
-									onClick="return AU.mainNav.Toggle( this )">
-									Close
-								</button>
-								<ul class="au-link-list">
-                    {% for item in site.data.navs.mainnav[0].items %}
-  									   <li class="{% if item.url == page.url %}active{% endif %}"><a href="{{ site.baseurl }}{{ item.url }}">{{ item.page }}</a></li>
-                    {% endfor %}
-								</ul>
-								<div class="au-main-nav__focus-trap-bottom"></div>
-							</div>
-						</div>
-						<div class="au-main-nav__overlay" aria-controls="main-nav-default-dark" onClick="return AU.mainNav.Toggle( this )"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</nav> 
+<nav id="main-navigation" class="nsw-navigation " aria-label="Main menu">
+  <div class="nsw-navigation__header">
+    <h2 id="nsw-navigation">Menu</h2>
+    <button type="button" class="nsw-navigation__close js-close-navigation" aria-expanded="true">
+      <svg class="nsw-icon icon" focusable="false" aria-hidden="true">
+        <use xlink:href="#close"></use>
+      </svg>
+      <span class="sr-only">Close Menu</span>
+    </button>
+  </div>
+  <ul class="nsw-navigation__list">
+	{% for item in site.data.navs.mainnav[0].items %}
+	   <li class="nsw-navigation__list-item"><a href="{{ site.baseurl }}{{ item.url }}" class="nsw-navigation__link">
+      <span class="nsw-navigation__link-text">{{ item.page }}</span></a></li>
+    {% endfor %}
+  </ul>
+</nav>	
+							
 {% endif %}
 
 <!-- MAIN BODY -->
-{{ content }}
+  {% include breadcrumbs.liquid %}
+
+    {{ content }}
+
 <!-- END MAIN BODY -->
 <!--FOOTER -->
-<footer class="au-footer au-footer--dark au-body au-body--dark" role="contentinfo">
-  <div class="container-fluid">
-    <div class="row">
-      <nav class="col-md-12">
-        <ul class="au-link-list au-link-list--inline">
+
+<footer class="nsw-footer">
+  <div class="nsw-footer__upper">
+    <div class="nsw-container section-links">
+        <div class="section-links__group">
+          <h3 class="section-links__heading"><a href="#">Section Link</a></h3>
+          <ul class="section-links__list">
           {% if site.data.navs.bottomnav[0] %}
             {% for item in site.data.navs.bottomnav[0].items %}
-                <li class="{% if item.url == page.url %}active{% endif %}"><a href="{% if item.external != true %}{{ site.baseurl }}{% endif %}{{ item.url }}">{{ item.page }}</a></li>
+                <li class="section-links__item"><a href="{% if item.external != true %}{{ site.baseurl }}{% endif %}{{ item.url }}">{{ item.page }}</a></li>
             {% endfor %}
           {% endif %}
-        </ul>
-      </nav>
-      <section class="col-sm-12">
-        <div class="au-footer__end">
-          <p>
-            Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 Licence.
-          </p>
+          </ul>
         </div>
-      </section>
+        <div class="section-links__group">
+          <h3 class="section-links__heading"><a href="#">Section Link</a></h3>
+          <ul class="section-links__list">
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+          </ul>
+        </div>
+        <div class="section-links__group">
+          <h3 class="section-links__heading"><a href="#">Section Link</a></h3>
+          <ul class="section-links__list">
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+          </ul>
+        </div>
+        <div class="section-links__group">
+          <h3 class="section-links__heading"><a href="#">Section Link</a></h3>
+          <ul class="section-links__list">
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+              <li class="section-links__item"><a href="#">Highlight link</a></li>
+          </ul>
+        </div>
     </div>
+  </div>
+  <div class="nsw-footer__lower">
+    <div class="nsw-container">
+      <p>We pay respect to the Traditional Custodians and First Peoples of NSW, and acknowledge their continued connection to their country and culture.</p>
+      <hr>
+      <ul class="nsw-footer-links">
+          <li class="nsw-footer-links__item">
+            <a href="#" class="nsw-footer-links__link">Tertiary</a>
+          </li>
+          <li class="nsw-footer-links__item">
+            <a href="#" class="nsw-footer-links__link">Tertiary</a>
+          </li>
+          <li class="nsw-footer-links__item">
+            <a href="#" class="nsw-footer-links__link">Tertiary</a>
+          </li>
+          <li class="nsw-footer-links__item">
+            <a href="#" class="nsw-footer-links__link">Tertiary</a>
+          </li>
+      </ul>
+      <div class="nsw-footer__info">
+        <p class="nsw-footer__copyright">Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 Licence.</p>
+        <p class="nsw-footer__built">Built by <a href="https://www.digital.nsw.gov.au/digital-design-system" target="_blank" rel="noopener noreferrer">NSW Design System</a></p>
+      </div>
+    </div>
+  </div>
 </footer>
+
+
+
 <script type="text/javascript" src="{{site.baseurl}}/assets/script.min.js"></script>
 	<script type="text/javascript">
 
