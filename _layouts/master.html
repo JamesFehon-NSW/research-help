@@ -11,21 +11,7 @@
   <link rel="icon" href="{{ site.baseurl }}/assets/favicon/favicon.ico">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
-  <script>
-    // SVG Sprite Loader
-    var svgAjax = new XMLHttpRequest();
-    svgAjax.open("GET", "{{ site.baseurl }}/assets/svg/sprite.svg", true);
-    svgAjax.send();
-    svgAjax.onload = function(e) {
-      var fragment = document.createRange().createContextualFragment(svgAjax.responseText);
-      var svg = fragment.querySelector('svg')
-      svg.setAttribute('aria-hidden', true);
-      svg.style.cssText = 'position: absolute; width: 0; height: 0; overflow: hidden;'
-      document.body.insertBefore(fragment, document.body.childNodes[0]);
-    };
-    // Replace 'no-js' with 'js' on the html tag
-    (function(e){e.className=e.className.replace(/\bno-js\b/,'js')})(document.documentElement);
-  </script>
+  
 </head>
 
 <body class="nsw-ds-example">
@@ -113,7 +99,6 @@
 {% endif %}
 
 <!-- MAIN BODY -->
-  {% include breadcrumbs.liquid %}
 
     {{ content }}
 
