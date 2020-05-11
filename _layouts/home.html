@@ -1,23 +1,31 @@
 ---
 layout: master
 ---
-<main>
-   <section class="au-body">
-	  <div class="container-fluid">
-		  <div class="row">
-        <div class="col-sm-8 col-sm-push-4">
-          {{ content }}
-        </div>
-        <div class="col-sm-4 col-sm-pull-8" id="content">			
-          <h2>Stay in the loop</h2>
-          <p>To get updates on what we're doing, sign up to our mailing list</p>
-			    <p>
-				    <a href="mailto:digital@finance.nsw.gov.au?subject=I'd like to stay in the research loop">
-              <button class="au-btn">Sign me up</button>
-            </a>	    
-			    </p>
-			  </div>
+<main class="nsw-body-content">
+  <div class="nsw-container">
+    <div class="nsw-grid">
+      <div class="nsw-col">
+        <!-- ### START OF CONTENT AREA - REPLACE CODE BELOW ### -->
+        
+            {{ content }}
+
+        <!-- ### END OF CONTENT AREA ### -->
+        <div class="nsw-container">
+  <div class="nsw-callout">
+    <svg class="nsw-icon nsw-callout__icon" focusable="false" aria-hidden="true">
+      <use xlink:href="#search"></use>
+    </svg>
+    <div class="nsw-callout__content">
+      <h4 class="nsw-callout__title">Stay in the loop</h4>
+      <p>To get updates on what we're doing, sign up to our mailing list/</p>
+      <a href="mailto:digital@finance.nsw.gov.au?subject=I'd like to stay in the research loop" class="nsw-text-link">Sign me up</a>
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
-  </section>
+  </div>
+
 </main>
+
