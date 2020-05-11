@@ -1,4 +1,5 @@
 # research-library
+A prototype of research advise and resources
 
 ## Quick start
 
