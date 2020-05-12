@@ -51,6 +51,7 @@ footer__uppernav:
     subfolderitems:
       - page: Thing 1
         url: /thing1.html
+        external: false
       - page: Thing 2
         url: /thing2.html
       - page: Thing 3
