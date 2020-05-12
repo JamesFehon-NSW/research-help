@@ -45,18 +45,18 @@ mainnav:
       -
         page: 'Getting Consent'
         url: /consent/
-      
-      
-     
+
+
+
 bottomnav:
   -
-    items: 
+    items:
       -
         page: 'Takedown position statement'
         url: /takedown/
       -
         page: 'Copyright and disclaimer'
-        url: /copyright/  
+        url: /copyright/
       -
         page: 'Privacy'
         url: https://www.customerservice.nsw.gov.au/privacy

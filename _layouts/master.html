@@ -169,13 +169,13 @@
     <div class="nsw-container">
       <p>We pay respect to the Traditional Custodians and First Peoples of NSW, and acknowledge their continued connection to their country and culture.</p>
       <hr>
-      <ul class="nsw-footer-links">
-{% if site.data.navs.tertiaryfooter[0] %}
-  {% for item in site.data.navs.tertiaryfooter[0].items %}
+        {% if site.data.navs.bottomnav[0] %}
+        <ul class="nsw-footer-links">
+          {% for item in site.data.navs.bottomnav[0].items %}
       <li class="nsw-footer-links__item"><a class="nsw-footer-links__link" href="{% if item.external != true %}{{ site.baseurl }}{% endif %}{{ item.url }}">{{ item.page }}</a></li>
-  {% endfor %}
-{% endif %}
-      </ul>
+          {% endfor %}
+        </ul>
+        {% endif %}
       <div class="nsw-footer__info">
         <p class="nsw-footer__copyright">Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 Licence.</p>
         <p class="nsw-footer__built">Built by <a href="https://www.digital.nsw.gov.au/digital-design-system" target="_blank" rel="noopener noreferrer">NSW Design System</a></p>
