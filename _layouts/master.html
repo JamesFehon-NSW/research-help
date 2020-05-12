@@ -126,7 +126,11 @@
         <div class="section-links__group">
           <h3 class="section-links__heading"><a href="#">Section Link</a></h3>
           <ul class="section-links__list">
-
+          {% if site.data.navs.bottomnav[0] %}
+            {% for item in site.data.navs.bottomnav[0].items %}
+                <li class="section-links__item"><a href="{% if item.external != true %}{{ site.baseurl }}{% endif %}{{ item.url }}">{{ item.page }}</a></li>
+            {% endfor %}
+          {% endif %}
           </ul>
         </div>
         <div class="section-links__group">
