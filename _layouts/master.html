@@ -123,46 +123,16 @@
 <footer class="nsw-footer">
   <div class="nsw-footer__upper">
     <div class="nsw-container section-links">
-        <div class="section-links__group">
-          <h3 class="section-links__heading"><a href="#">Section Link</a></h3>
-          <ul class="section-links__list">
-          {% if site.data.navs.bottomnav[0] %}
-            {% for item in site.data.navs.bottomnav[0].items %}
-                <li class="section-links__item"><a href="{% if item.external != true %}{{ site.baseurl }}{% endif %}{{ item.url }}">{{ item.page }}</a></li>
-            {% endfor %}
-          {% endif %}
-          </ul>
-        </div>
-        <div class="section-links__group">
-          <h3 class="section-links__heading"><a href="#">Section Link</a></h3>
-          <ul class="section-links__list">
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-          </ul>
-        </div>
-        <div class="section-links__group">
-          <h3 class="section-links__heading"><a href="#">Section Link</a></h3>
-          <ul class="section-links__list">
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-          </ul>
-        </div>
-        <div class="section-links__group">
-          <h3 class="section-links__heading"><a href="#">Section Link</a></h3>
-          <ul class="section-links__list">
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-              <li class="section-links__item"><a href="#">Highlight link</a></li>
-          </ul>
-        </div>
+    {% for item in site.data.navs.footer__uppernav %}
+    <div class="section-links__group">
+      <h3 class="section-links__heading"><a href="{% if item.external != true %}{{ site.baseurl }}{% endif %}{{ item.url }}">{{ item.title }}</a></h3>
+      <ul class="section-links__list">
+          {% for entry in item.subfolderitems %}
+            <li class="section-links__item"><a href="{{ entry.url }}">{{ entry.page }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
     </div>
   </div>
   <div class="nsw-footer__lower">
