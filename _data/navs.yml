@@ -48,6 +48,7 @@ mainnav:
 
 footer__uppernav:
   - title: 'Group 1'
+    url: /
     subfolderitems:
       - page: 'Thing 1'
         url: /thing1.html
@@ -57,6 +58,7 @@ footer__uppernav:
       - page: 'Thing 3'
         url: /thing3.html
   - title: 'Group 2'
+    url: /
     subfolderitems:
       - page: 'Piece 1'
         url: /piece1.html
@@ -65,6 +67,7 @@ footer__uppernav:
       - page: 'Piece 3'
         url: /piece3.html
   - title: 'Group 3'
+    url: /
     subfolderitems:
       - page: 'Widget 1'
         url: /widget1.html
